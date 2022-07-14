@@ -35,4 +35,18 @@ for (i = 0; i < circles.length; i++){
 //     circles.x.style.backgroundColor = randomColor();
 // }
 
-document.querySelector
+//assign 1 of the cirles bg color as a correct answer
+
+let correctAnswer = () =>{
+    let random = Math.floor(Math.random() * 3);
+    let rgbToShow = circles[random].style.backgroundColor;
+    return rgbToShow;
+}
+
+// add rgbtoShow to <p></p>//
+
+let pGuess = document.querySelector(".toguess :first-Child");
+
+let colorToGuess = document.createTextNode(correctAnswer());
+
+pGuess.appendChild(colorToGuess);
