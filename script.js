@@ -1,5 +1,11 @@
 //score counter function
-// let score = 0;
+let score = 0;
+let upScore = document.getElementById("btn")
+upScore.addEventListener("click", function () {
+    score+=1;
+    document.getElementById("gameScore").innerHTML = score;
+    
+})
 
 
 // timer function
