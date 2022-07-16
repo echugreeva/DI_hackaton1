@@ -1,4 +1,5 @@
 
+
 let randomColor = () => {
     let r =  Math.floor(Math.random() * 255);
     let g = Math.floor(Math.random() * 255);
@@ -53,6 +54,7 @@ pGuess.appendChild(colorToGuess);
 
 
 
+
 // generate round
 
 
@@ -81,3 +83,27 @@ let generateRound = () => {
 
 // 1. first screen onclick of the start button, game begins
 // 2. generate round function runs
+=======
+//score counter function
+let score = 0;
+let upScore = document.getElementById("btn")
+upScore.addEventListener("click", function () {
+    score+=1;
+    document.getElementById("gameScore").innerHTML = score;
+    
+})
+
+
+// timer function
+
+let timeleft = 10;
+let downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    document.getElementById("timeDown").innerHTML = "TimeOut";
+  } else {
+    document.getElementById("timeDown").innerHTML = timeleft + " seconds";
+  }
+  timeleft -= 1;
+}, 1000);
+
