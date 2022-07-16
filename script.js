@@ -53,6 +53,37 @@ let colorToGuess = document.createTextNode(correctAnswer());
 pGuess.appendChild(colorToGuess);
 
 
+
+
+// generate round
+
+
+// add answer and check answer functions
+// event listeners on circles -> if user clicks -> check if color match, if yes add score and render colors again
+
+let numRound = 1;
+
+let generateRound = () => {
+
+    //generate circles colors
+    //generate question /correct answer
+
+    //add listeners to circles
+    //collect users input
+    //compare input to correct answer
+    // counter +
+    //call generate round again 
+    //add count of the round (every time generateRound runs numberOf round ++)
+    //add conditional if numRound x switch randomColor type (maybe add switch case...)
+
+
+}
+
+//for loop 10 times to create rounds
+
+// 1. first screen onclick of the start button, game begins
+// 2. generate round function runs
+=======
 //score counter function
 let score = 0;
 let upScore = document.getElementById("btn")
@@ -75,3 +106,4 @@ let downloadTimer = setInterval(function(){
   }
   timeleft -= 1;
 }, 1000);
+
