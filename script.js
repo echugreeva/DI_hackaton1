@@ -50,3 +50,13 @@ let pGuess = document.querySelector(".toguess :first-Child");
 let colorToGuess = document.createTextNode(correctAnswer());
 
 pGuess.appendChild(colorToGuess);
+
+
+
+// generate round
+
+
+// add answer and check answer functions
+// event listeners on circles -> if user clicks -> check if color match, if yes add score and render colors again
+
+
