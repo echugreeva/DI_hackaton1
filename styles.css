@@ -1,7 +1,50 @@
+
+body {
+    background-image: linear-gradient(to right, #e66465 , #9198e5);
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+
+}
+
+
+h2 {
+    color: white;
+    margin: 50px;
+}
+
+.toGuess {
+    color: white;
+    font-size: 20px;
+}
+
+.score {
+   
+    margin: 20px;
+}
+
+.w3-tag {
+    margin: 10px;
+
+}
+
+.w3-cell {
+    width:10%;
+    margin-top: 20px;
+}
+.gameDiv {
+    /* background-color: aliceblue; */
+}
 .circle {
     display: inline-block;
     width: 150px;
     height: 150px;
-    border: 2px solid black;
-    border-radius: 50%;
+    border-radius: 15%;
+    margin: 2px;
+}
+
+.circle :hover {
+
 }
