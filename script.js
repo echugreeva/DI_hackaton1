@@ -78,15 +78,37 @@ let randomBlue = () => {
 // generate round;
 let rgbToShow;
 let numRound = 1;
+let score = 0;
+let correctRGB;
+let downloadTimer;
+let circles = [...document.querySelectorAll(".circle")];
+
+let roundRGBs =[];    
+let checkAnswer =(e, circleBackgroundColor) => {
+    e.stopPropagation();
+    e.preventDefault();
+    clearInterval(downloadTimer);
+    if (correctRGB == circleBackgroundColor) {
+    score+=1;
+    document.getElementById("gameScore").innerHTML = score;
+   if (numRound < 4) {generateRound();}
+   
+} else if (numRound < 4) {
+    generateRound();
+}
+}
+
+let gameDiv = document.querySelector(".gameDiv");
+gameDiv.style.display = "none";
+
+let startBtn = document.querySelector(".start");
+let header = document.querySelector("header");
+
 
 let generateRound = () => {
     numRound ++;
+    roundRGBs =[];
     let pGuess = document.querySelector("p");
-    pGuess.removeChild;
-
-    let circles = [...document.querySelectorAll(".circle")];
-    let roundRGBs =[];
-
         for (i = 0; i < circles.length; i++){
             
             circles[i].style.backgroundColor = randomColor();
@@ -96,43 +118,23 @@ let generateRound = () => {
         }
     console.log(roundRGBs);
 
-//takes 1 of circles rgbs 
-    let correctAnswer = () =>{
-        let random = Math.floor(Math.random() * 4);
-        rgbToShow = roundRGBs[random];
-        return rgbToShow;
-    }
-
-    let correctRGB = correctAnswer();
-    console.log(`correct answer is ${correctRGB}`);
-
-    
-        
-    let colorToGuess = document.createTextNode(correctRGB);
-        
-    pGuess.appendChild(colorToGuess);        
-        
 //addeventlistener to each circle and onclick trigger check answer
-    for (i = 0; i < circles.length; i++){
-        circles[i].addEventListener("click", checkAnswer=()=>{
-                if (correctRGB == circles[i].style.backgroundColor) {
-                    score+=1;
-                    document.getElementById("gameScore").innerHTML = score;
-                   if (numRound < 4) {generateRound();}
-                   
-                } else if (numRound < 4) {
-                    generateRound();
-                }
-            });
-        }
-            
+for (let i = 0; i < circles.length; i++){
+    const circleBackgroundColor = circles[i].style.backgroundColor;
+    circles[i].addEventListener("click", (e) => checkAnswer(e, circleBackgroundColor));
+    }
+//takes 1 of circles rgbs. works it returns 1 rgb code
+    let random = Math.floor(Math.random() * 4);
+    correctRGB = roundRGBs[random];
+    console.log(`correct answer is ${correctRGB}`)
+       
+    // let colorToGuess = document.createTextNode(correctRGB);
         
-    
-    
-    
+    // pGuess.appendChild(colorToGuess);        
 
-    let timeleft = 5;
-    let downloadTimer = setInterval(function(){
+    pGuess.textContent = correctRGB;
+    let timeleft = 10;
+    downloadTimer = setInterval(function(){
     if(timeleft <= 0){
     clearInterval(downloadTimer);
     document.getElementById("timeDown").innerHTML = "TimeOut";
@@ -143,16 +145,7 @@ let generateRound = () => {
 }
 timeleft -= 1;
     }, 1000);
-    
-    
-
 }
-
-let gameDiv = document.querySelector(".gameDiv");
-gameDiv.style.display = "none";
-
-let startBtn = document.querySelector(".start");
-let header = document.querySelector("header");
 
 startBtn.addEventListener("click", function(){
     gameDiv.style.display = "block";
@@ -160,7 +153,7 @@ startBtn.addEventListener("click", function(){
     generateRound();
 })
 
-let score = 0;
+
 
 // while (numRound <4){
     
