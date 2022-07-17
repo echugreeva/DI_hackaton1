@@ -91,9 +91,9 @@ let checkAnswer =(e, circleBackgroundColor) => {
     if (correctRGB == circleBackgroundColor) {
     score+=1;
     document.getElementById("gameScore").innerHTML = score;
-   if (numRound < 4) {generateRound();}
+   if (numRound < 10) {generateRound();}
    
-} else if (numRound < 4) {
+} else if (numRound < 10) {
     generateRound();
 }
 }
@@ -106,7 +106,8 @@ let header = document.querySelector("header");
 
 
 let generateRound = () => {
-    numRound ++;
+    document.querySelector("#roundNum").textContent = numRound;
+    
     roundRGBs =[];
     let pGuess = document.querySelector("p");
         for (i = 0; i < circles.length; i++){
@@ -132,19 +133,21 @@ for (let i = 0; i < circles.length; i++){
         
     // pGuess.appendChild(colorToGuess);        
 
-    pGuess.textContent = correctRGB;
+    pGuess.textContent = `Guess the matchig color: ${correctRGB}`;
     let timeleft = 10;
     downloadTimer = setInterval(function(){
     if(timeleft <= 0){
     clearInterval(downloadTimer);
     document.getElementById("timeDown").innerHTML = "TimeOut";
-    if (numRound < 4) 
+    if (numRound < 10) 
                    {generateRound()};
 } else {
     document.getElementById("timeDown").innerHTML = timeleft + " seconds";
 }
 timeleft -= 1;
     }, 1000);
+
+    numRound +=1;
 }
 
 startBtn.addEventListener("click", function(){
