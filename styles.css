@@ -1,14 +1,11 @@
-
 body {
-    background-image: linear-gradient(to right, #e66465 , #9198e5);
+    background-image: linear-gradient(to right, #e66465, #9198e5);
     text-align: center;
 }
 
 .container {
     margin: 0 auto;
-
 }
-
 
 h2 {
     color: white;
@@ -21,17 +18,15 @@ h2 {
 }
 
 .score {
-   
     margin: 20px;
 }
 
 .w3-tag {
     margin: 10px;
-
 }
 
 .w3-cell {
-    width:10%;
+    width: 10%;
     margin-top: 20px;
 }
 .gameDiv {
@@ -46,5 +41,4 @@ h2 {
 }
 
 .circle :hover {
-
 }

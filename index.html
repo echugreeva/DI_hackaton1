@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+        <link rel="stylesheet" href="./styles.css" />
+        <title>Hackaton1</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="./styles.css">
-    <title>Hackaton1</title>
-</head>
-
-<body>
-    <div class="container">
-        <header class = "w3-col">
-            <div>
-               <h2>Guess the right color by RGB code. You have 10 sec per round and 10 rounds!</h2> 
-            </div>
-            <button class="start w3-button w3-indigo w3-hover-purple w3-round-xlarge w3-xxxlarge ">Click to Play</button>
-        </header>
-        <div class="gameDiv">
-            <div class="toGuess">
-                <p>Guess which circle is matching this: </p>
-            </div>
-            <div class="game">
-                <div class="circle w3-hover-opacity"></div>
-                <div class="circle w3-hover-opacity"></div>
-                <div class="circle w3-hover-opacity"></div>
-                <div class="circle w3-hover-opacity"></div>
-            </div>
-            <div class="w3-cell-row w3-center w3-margin	">
-                <div class="score w3-tag w3-round w3-indigo w3-cell m2 w3-margin	">
-                    <p>Your Score</p>
-                    <p id="gameScore">0</p>
-                    <!-- <button id="btn">True answer</button> adding just for test -->
+    <body>
+        <div class="container">
+            <header class="w3-col">
+                <div>
+                    <h2>
+                        Guess the right color by RGB code. You have 10 sec per round and
+                        10 rounds!
+                    </h2>
                 </div>
-                <div class="timer w3-tag w3-round w3-cell m2 w3-margin">
-                    <p>Time</p>
-                    <p id="timeDown">10</p>
+                <button
+                    class="start w3-button w3-indigo w3-hover-purple w3-round-xlarge w3-xxxlarge"
+                >
+                    Click to Play
+                </button>
+            </header>
+            <div class="gameDiv">
+                <div class="toGuess">
+                    <p>Guess which circle is matching this:</p>
                 </div>
-                <div class="round w3-tag w3-round w3-pink w3-cell m2 w3-margin">
-                    <p>Round</p>
-                    <p id="roundNum"></p>
+                <div class="game">
+                    <div class="circle w3-hover-opacity"></div>
+                    <div class="circle w3-hover-opacity"></div>
+                    <div class="circle w3-hover-opacity"></div>
+                    <div class="circle w3-hover-opacity"></div>
+                </div>
+                <div class="w3-cell-row w3-center w3-margin">
+                    <div class="score w3-tag w3-round w3-indigo w3-cell m2 w3-margin">
+                        <p>Your Score</p>
+                        <p id="gameScore">0</p>
+                        <!-- <button id="btn">True answer</button> adding just for test -->
+                    </div>
+                    <div class="timer w3-tag w3-round w3-cell m2 w3-margin">
+                        <p>Time</p>
+                        <p id="timeDown">10</p>
+                    </div>
+                    <div class="round w3-tag w3-round w3-pink w3-cell m2 w3-margin">
+                        <p>Round</p>
+                        <p id="roundNum"></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="./script.js"></script>
-</body>
-
+        <script src="./script.js"></script>
+    </body>
 </html>

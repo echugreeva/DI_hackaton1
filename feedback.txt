@@ -1,0 +1,33 @@
+HTML:
+    Things that were done well:
+    - Short and clean!
+    - Good use of ids as selectors for elements that are meant to display unique information in the page.  Referring to gameScore, timeDown, roundNum.
+
+    Things to improve:
+    - In general, it's a good idea to not wrap everything in one container.  In this case, the project was simple, so it's not a big deal. 😉
+
+
+CSS:
+    Things that were done well:
+    - Good use of a library.
+    - In your CSS, you just added what wasn't included in the library, and in instances where you needed to, you tried only customizing specific library classes.  Good job.
+
+    Things to improve:
+    - I said "tried" in the previous comment, since at the end of the day, some of the attempts that were made to override specific classes didn't end up changing the style. When you see a class not being overridden by your custom css, it probably means that either that class in the library or some other class in the library is using the "!important" flag.  In this case, the only way for your CSS to override that style is by adding "!important" to the appropriate property and making sure your styles come after the library styles in the HTML (like you already did). Mostly referring to .w3-tag and .w3-cell.
+
+
+JS:
+    Things that were done well:
+    - Good modularity.  The way you created small functions to take care of specific tasks was very good.
+    - Great thinking.  Good use of intervals!
+
+    Things to improve:
+    - You could make the modularity even better!  Try to see if you can break apart your generateRound function into smaller parts to be clearer. 😁
+    - 😒... Too much "let".  Need more "const".  Can get away with it now, but best to start getting used to using const whenever creating a variable holding information that shouldn't be changed.  In a real production environment, this is very important.  Mostly referring to your functions.  All the functions should be made with const instead of let. Also referring to the array containing your circle elements.  All references to DOM elements should be const.
+    - Instead of selecting the gameDiv and right away giving it a style of "display: none" in the JS, it would've been more efficient to give it that style directly in the HTML.
+    - Instead of always selecting certain elements each time the generateRound function is triggered, best to just select them externally in the global scope once.  Good idea, since you're going to be constantly using them.
+    - Small bug: even when selecting correct answer, score doesn't increment at times.
+
+
+OVERALL:
+    Really nice work.  Sure, there are things to improve here and there, but in general, this project really shows how far you've come.  It really was a pleasure teaching you, even though it was only for a short time.  Continue to push forward, and I know you'll make an awesome developer. 😄
